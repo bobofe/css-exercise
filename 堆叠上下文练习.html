@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div.c1,div.c2,div.c3{
+            width: 200px;
+            height: 200px;
+        }
+        div.c1{
+            background: red;
+        }
+        div.c1-2{
+            width: 100px;
+            height: 100px;
+            position: relative;
+            z-index: 10;
+            background: #000;
+        }
+        div.c2{
+            background: blue;
+        }
+        /*div.c2-1{*/
+            /*width: 100px;*/
+            /*height: 100px;*/
+            /*position: relative;*/
+            /*background: pink;*/
+            /*top: 20px;*/
+            /*left: 20px;*/
+            /*z-index: 100;*/
+        /*}*/
+        div.c3{
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            background: yellow;
+            z-index:2;
+            top: 50px;
+            left: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="c1">
+    <div class="c1-1">
+        <div class="c1-2"></div>
+    </div>
+</div>
+<div class="c2">
+    </div>
+</div>
+<div class="c3">
+
+</div>
+<p>层叠上下文关系着谁压着谁的问题，核心点：是否在同一层叠上下文，</p>
+<p>难点：如何判断是否在同一层叠上下中</p>
+<ul>
+    <li>层叠上下文不能受DOM关系影响,层叠上下文相当于皇室，需要单独拿出来看</li>
+    <li>看层叠上下文，从根元素开始，根元素代表最外层的圈，在DOM树上，遇到会生成层叠上下文的元素进行画圈，
+        <br>对每个子层叠上下文执行相同的操作,按照圈离根元素（父层叠上下文）的位置进行标数，数相同者为同
+        一级，<br>可视为在同一层叠上下中，圈外元素视为同一层级的平民元素
+    </li>
+    <li>
+        上面的例子中，div.c1-2和div.c3离根元素一样近，所以属于同一层叠上下文中，所以比较z-index即可
+    </li>
+    <li>如果比较div.c3和div.c1-1，他们也在同一层叠上下文中，按排列顺序比较</li>
+</ul>
+
+</body>
+</html>
