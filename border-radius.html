@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .test{
+            width: 200px;
+            height: 200px;
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+<div class="test"></div>
+<script>
+    var test = document.querySelector('.test');
+    test.onclick = function (e) {
+        var e = e || event;
+        console.log(window)
+        console.log(window.event)
+        console.log(window.document)
+    };
+</script>
+</body>
+</html>
