@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>transform变形</title>
+    <style>
+        a{
+            color: #000;
+            text-decoration: none;
+        }
+        .translate{
+            width: 200px;
+            height: 300px;
+            border: 1px solid red;
+            margin: 10px auto;
+            position:relative;
+        }
+        .translate .child{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            background-color: yellow;
+            padding: 50px;
+            transform: translate(-50%,-50%);
+        }
+        .parent{
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        .rotate{
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+            background-color: red;
+            margin: 10px 10px;
+            float: left;
+        }
+        .rotate-x{
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+            background-color: red;
+            margin: 10px 10px;
+            transform: rotateX(45deg);
+            float: left;
+        }
+        .rotate-y{
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+            background-color: red;
+            margin: 40px 40px;
+            transform: rotateY(45deg);
+            float: left;
+        }
+        .rotate-z{
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+            background-color: red;
+            margin: 40px 40px;
+            transform: rotateZ(45deg);
+            float: left;
+        }
+        .rotate-x1{
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+            background-color: red;
+            margin: 10px 10px;
+            transform:perspective(800px) rotateX(45deg);
+        }
+        .rotate-y1{
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+            background-color: red;
+            margin: 40px 40px;
+            transform:perspective(800px)  rotateY(45deg);
+            margin: 20px auto;
+        }
+        .rotate-z1{
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+            background-color: red;
+            margin: 40px 40px;
+            transform: perspective(800px) rotateZ(45deg);
+        }
+
+        .scale{
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+            background-color: red;
+            margin: 10px;
+        }
+        .scale-x{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            margin: 50px 10px;
+            transform: scale(-1.1);
+        }
+        .skew{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            margin: 80px auto;
+            /*transform: skew(45deg);*/
+            transform: skewY(45deg);
+        }
+        .wrap{
+            width: 200px;
+            height: 60px;
+            background-color: red;
+            float: left;
+            margin: 20px 40px;
+            text-align: center;
+            line-height: 60px;
+
+            transform: skew(-45deg);
+        }
+        .pxsbx1{
+            transform: skew(45deg);
+        }
+        .pxsbx2{
+            position: relative;
+            width: 200px;
+            height: 60px;
+            float: left;
+            text-align: center;
+            line-height: 60px;
+        }
+        .pxsbx2:after{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-color: red;
+            z-index: -1;
+            transform: skew(-45deg);
+        }
+        .tixing1{
+            position: relative;
+            padding: .5em  1em .35em;
+            display: inline-block;
+        }
+        .tixing1::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            z-index: -1;
+            background: yellow;
+            transform: perspective(.5em)rotateX(5deg);
+        }
+        .tixing-nav{
+            margin:20px 40px;
+        }
+        .tixing-nav a{
+            display: inline-block;
+            position: relative;
+            padding: .3em 1em 0;
+        }
+        .tixing-nav a:before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+
+            background: #ccc;
+            /*background: linear-gradient(hsla(0,0%,100%,.6),hsla(0,0%,100%,.6));*/
+            border: 1px solid rgba(0,0,0,.4);
+            transform: perspective(.5em) rotateX(5deg) scaleY(1.3);
+            transform-origin: bottom;
+            border-radius:8px 8px 0 0 ;
+            box-shadow: 0 .1em white inset;
+            /*让tab看起来有立体感*/
+        }
+    </style>
+</head>
+<body>
+<div class="translate">
+    <div class="child">
+        我是平移
+    </div>
+</div>
+<div class="parent">
+    <div class="rotate">
+        我是原图
+    </div>
+    <div class="rotate-x">
+        我是x轴旋转
+    </div>
+    <div class="rotate-y">
+        我是y轴旋转
+    </div>
+    <div class="rotate-z">
+        我是z轴旋转
+    </div>
+</div>
+<p>2D旋转：X轴旋转高度减小，Y轴旋转宽度减小</p>
+<div class="parent">
+    <div class="rotate-x1">
+        我是x轴旋转
+    </div>
+    <div class="rotate-y1">
+        我是y轴旋转
+    </div>
+    <div class="rotate-z1">
+        我是z轴旋转
+    </div>
+</div>
+<div class="parent">
+    <div class="scale">
+        我是原图
+    </div>
+    <div class="scale-x">
+        我是缩放负值,在x轴和y轴方向都进行了旋转
+    </div>
+</div>
+<div class="skew"></div>
+<div class="parent">
+    <div class="wrap">
+        <div class="pxsbx1">
+            我是平行四边形1
+        </div>
+    </div>
+    <div class="pxsbx2">我是平行四边形2</div>
+</div>
+
+<div class="tixing1">我是梯形</div>
+
+<div class="tixing-nav">
+    <a href="">首页</a><a href="">看过来</a><a href="">你愁啥</a><a href="">瞅你咋地</a>
+</div>
+
+</body>
+</html>

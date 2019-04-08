@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>渐变</title>
+    <style>
+        .parent{
+            overflow: hidden;
+        }
+        .lg1{
+            width: 200px;
+            height: 200px;
+            /*border:1px solid red ;*/
+            background: linear-gradient(0deg,red,black);
+            float: left;
+            margin-right: 20px;
+        }
+        .lg2{
+            width: 200px;
+            height: 200px;
+            /*border: 1px solid red;*/
+            background: linear-gradient(45deg,red 50%,blue 50%);
+            float: left;
+            margin-right: 20px;
+        }
+        .lg3{
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(red 50%,blue 50%);
+            float: left;
+            margin-right: 20px;
+        }
+        .lg4{
+             width: 200px;
+             height: 200px;
+             background: linear-gradient(red 50%,blue 50%);
+             -webkit-background-size: 100% 20px;
+             background-size: 100% 20px;
+             float: left;
+             margin-right: 20px;
+         }
+        .lg5{
+            width: 200px;
+            height: 200px;
+            background: repeating-linear-gradient(60deg,red,red 15px,blue 0,blue 30px);
+            float: left;
+            margin-right: 20px;
+            margin-top:20px ;
+        }
+        .lg6{
+            width: 200px;
+            height: 200px;
+            background: #58a;
+            background-image:
+                    repeating-linear-gradient(30deg,hsla(0,0%,100%,.1),hsla(0,0%,100%,.1) 15px,transparent 0,transparent 30px);
+            float: left;
+            margin-right: 20px;
+            margin-top:20px ;
+        }
+        .lg7{
+            padding: 1em;
+            border: 16px solid transparent;
+            border-image: 16 repeating-linear-gradient(-45deg,
+            red 0, red 1em,
+            transparent 0, transparent 2em,
+            #58a 0, #58a 3em,
+            transparent 0, transparent 4em);
+            float: left;
+            margin-top: 20px;
+        }
+        .rg1{
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+
+            background: radial-gradient(closest-side ellipse ,#ffaf7b, #d76d77 ,#3a1c71);
+            /*background: radial-gradient(closest-side ellipse at 20% 30%,#ffaf7b, #d76d77 ,#3a1c71);*/
+        }
+        div.test1,div.test2{width: 200px;height: 200px;display: inline-block;}
+        .test{
+            width:500px ;
+            height: 100px;
+            background:linear-gradient(
+                    45deg,
+                    #fff 0%,
+                    #fff 25%,
+                    #000 25%,
+                    #000 50%,
+                    #fff 50%,
+                    #fff 75%,
+                    #000 75%,
+                    #000 100%
+            );
+            -webkit-background-size: 100px;
+            background-size: 100px;
+
+            animation: run 0.5s linear infinite;
+
+        }
+
+        @keyframes run {
+            0%{
+                background-position: 0;
+            }
+            100%{
+                background-position: 100px;
+            }
+        }
+
+        .test1,.test2{
+            background-image:
+                    linear-gradient(45deg,red 25%,transparent 25%),
+                    linear-gradient(-45deg,red 25%,transparent 25%),
+                    linear-gradient(45deg,transparent 75%,red 75%),
+                    linear-gradient(-45deg,transparent 75%,red 75%);
+        }
+        .test2{
+            background-size: 20% 20%;
+            background-repeat: repeat;
+        }
+        h2{
+            border: 1px solid red;
+            text-align:center;
+            line-height:50px;
+            background:
+                linear-gradient(transparent,transparent 49%,#000 49%,#000 51% ,transparent 51%);
+        }
+        span{
+            padding:0 10px;
+            background:#fff;
+        }
+        .lg3{
+            width: 200px;
+            height: 200px;
+
+            background:
+            linear-gradient(red 50%,black 50%),
+            linear-gradient(black,yellowgreen);
+            ;
+        }
+        .qiejiao1{
+            width: 200px;
+            height: 200px;
+            background: red;
+            background: linear-gradient(-45deg,transparent 25px,#58a 0);
+            margin-bottom: 10px;
+        }
+        .qiejiao2{
+            width: 200px;
+            height: 200px;
+            background: red;
+            background: linear-gradient(45deg,transparent 10%,#58a 10%,#58a 90%,transparent 90%);
+            margin-bottom: 10px;
+        }
+        .qiejiao3{
+            width: 200px;
+            height: 200px;
+            background: red;
+            background:
+                    linear-gradient(45deg,transparent 10%,red 10%) left,
+                    linear-gradient(-45deg,transparent 10%,blue 10%) right;
+            -webkit-background-size: 50% 100%;
+            background-size: 50% 100%;
+            background-repeat: no-repeat;
+            margin-bottom: 10px;
+        }
+        .qiejiao4{
+            width: 200px;
+            height: 200px;
+            background: red;
+            background:
+                    linear-gradient(45deg,transparent 10%,red 10%) left bottom,
+                    linear-gradient(-45deg,transparent 10%,blue 10%) right bottom,
+                    linear-gradient(135deg,transparent 10%,yellow 10%) left top,
+                    linear-gradient(-135deg,transparent 10%,orange 10%) right top;
+
+            -webkit-background-size: 50% 50%;
+            background-size: 50% 50%;
+            background-repeat: no-repeat;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<p>如果某个色标的位置比整个列表中在它之前的色标的位置值都要小，则该色标的位置会被设置为它前面所有色标位置值的最大值，所有后面这个色标的位置值可设为0，代码会更加Dry</p>
+<p>每一个liner-gradient都是一层背景，且会互相覆盖，先写的在上，后写的在下，即：背景可以有很多层</p>
+<p>复杂的线性渐变由简单的线性渐变repeat而成</p>
+<p>重复渐变的好处：①减少了重复②线性条纹无法拆解时非常方便,适用于重复的斜向条纹</p>
+<p>同色系条纹：</p>
+<div class="parent">
+    <div class="lg1"></div>
+    <div class="lg2"></div>
+    <div class="lg3">我是条纹背景1</div>
+    <div class="lg4">我是条纹背景2</div>
+    <div class="lg5">我是repeating-linear-gradient</div>
+    <div class="lg6"></div>
+    <div class="lg7">gggggggggggggggggggggggggggggggggg</div>
+</div>
+
+<div class="rg1"></div>
+<div class="test"></div>
+<div class="test1"></div>
+<div class="test2"></div>
+<h2><span>立即注册</span></h2>
+<div class="lg3">看看谁在上</div>
+<div class="qiejiao1">只切一个角</div>
+<div class="qiejiao2">切两个对角</div>
+<div class="qiejiao3">切相邻两个角</div>
+<div class="qiejiao4">切四个角</div>
+</body>
+</html>
