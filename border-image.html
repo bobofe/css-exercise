@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .bi1{
+            width: 100px;
+            height: 100px;
+            border: 40px solid transparent;
+            border-image-source: url("https://mdn.mozillademos.org/files/4127/border.png") ;
+            /*相当于slice：100%*/
+        }
+        .bi2{
+            width: 100px;
+            height: 100px;
+            border: 40px solid transparent;
+            border-image-source: url("https://mdn.mozillademos.org/files/4127/border.png") ;
+            border-image-slice: 30 fill;
+            margin-top: 10px;
+        }
+        .bi3{
+            width: 100px;
+            height: 100px;
+            border: 40px solid transparent;
+            border-image-source: url("https://mdn.mozillademos.org/files/4127/border.png") ;
+            border-image-slice: 44;
+            border-image-width: 5% 15% 10%;
+            margin-top: 10px;
+        }
+        .bi4{
+            width: 100px;
+            height: 100px;
+            border: 40px solid transparent;
+            border-image: linear-gradient(red,black) 10;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<p>如果只设置border-image-source,图片会被缩放防在四个角，相当于border-image-slice的值为100%</p>
+<div class="bi1"></div>
+<p>border-image-slice：截取图片的一部分放在相应的位置上</p>
+<div class="bi2"></div>
+<p>border-image-width:背景图片大小</p>
+<div class="bi3"></div>
+<p></p>
+<div class="bi4"></div>
+</body>
+</html>

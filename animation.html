@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Animation</title>
+    <style>
+        .animation1{
+            width: 200px;
+            height: 200px;
+            background: red;
+            animation: larger 5s linear;
+        }
+        @keyframes larger {
+            100%{
+                background: #000;
+                height: 400px;
+                width: 400px;
+            }
+        }
+        .animation2{
+            width: 200px;
+            height: 200px;
+            background: red;
+            animation: test 5s linear;
+        }
+        @keyframes test {
+            80%{
+                width: 400px;
+                height: 400px;
+            }
+        }
+        .animation3{
+            width: 200px;
+            height: 200px;
+            background: red;
+            animation: test 5s linear 10s forwards;
+        }
+        .animation3{
+            width: 200px;
+            height: 200px;
+            background: red;
+            animation: test 5s linear 10s backwards;
+        }
+        @keyframes test {
+            0%{
+                background: pink;
+            }
+            20%{
+                background: blueviolet;
+            }
+            100%{
+                background: black;
+            }
+        }
+    </style>
+</head>
+<body>
+<p>normal:从开始执行到100%，再瞬间回到初始状态</p>
+<p>关键帧：如果0%或100%不指定关键帧，将使用该元素默认的属性值</p>
+<div class="animation1">我是动画1</div>
+<div class="animation2">我是动画2，有一种动画结束后逐帧回到起始状态的错觉，其实是100%的状态和初始相同</div>
+<p>
+    none :表示等待期和完成期，元素样式都为初始状态样式，不受动画定义（@keyframes）的影响。<br>
+
+    forwards :表示等待期保持初始样式，完成期间保持最后一帧样式。<br>
+
+    backwards :表示等待期为第一帧样式，完成期跳转为初始样式<br>
+
+    both :表示等待期样式为第一帧样式，完成期保持最后一帧样式。<br>
+
+</p>
+<div class="animation3">animation-fill-mode：forward</div>
+<div class="animation4">animation-fill-mode：backwards</div>
+</body>
+</html>
