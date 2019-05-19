@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字体图标文字基线对齐问题</title>
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <style>
+        div{
+            height: 80px;
+            background: yellow;
+            display: inline-block;
+            padding: 10px;
+            line-height: 80px;
+        }
+        div span,div i{
+            vertical-align:middle;
+        }
+        div span {
+            font-size: 20px;
+            display: inline-block;
+            background: red;
+        }
+        div i{
+            font-size: 30px;
+            display: inline-block;
+            background: burlywood;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <span>我我我</span><i>我我我我</i>
+</div>
+</body>
+</html>
