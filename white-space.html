@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        p{background:#ddd;}
+        .m-demo .p1{white-space:normal;}
+        .m-demo .p2{white-space:pre;}
+        .m-demo .p3{white-space:pre-wrap;}
+        .m-demo .p4{white-space:pre-line;}
+        .m-demo .p5{white-space:nowrap;}
+        .m-demo .p6{white-space:pre-wrap;}
+    </style>
+</head>
+<body>
+<div class="m-demo">
+    <p class="p1">white-space:normal; 左边1个空格  左边2个空格   左边3个空格
+        左边一个换行
+        左边一个换行加一个Tab
+    </p> <div style="color:red;">white-space:normal;默认处理方式，合并文本间的空白距离（多个相邻空格合并成一个空格），tab解析为空格，换行解析为空格，文字超出边界换行</div>
+
+
+    <p class="p2">white-space:pre; 左边1个空格  左边2个空格   左边3个空格
+        左边一个换行
+            左边一个换行加一个Tab
+    </p>
+    <div style="color:red;">white-space:pre;不合并文字间的空白距离，保留tab，换行解析为tab并换行，文字超出边界时不换行</div>
+
+
+    <p class="p3">white-space:pre-wrap; 左边1个空格  左边2个空格   左边3个空格
+        左边一个换行
+            左边一个换行加一个Tab
+    </p>
+    <div style="color:red;">white-space:pre-wrap;不合并文字间的空白距离，保留tab，换行解析为tab并换行，当文字超出边界时换行</div>
+
+    <p class="p4">white-space:pre-line; 左边1个空格  左边2个空格   左边3个空格
+        左边一个换行
+            左边一个换行加一个Tab
+    </p>
+    <div style="color:red;">white-space:pre-line;合并文字间的空白距离，忽略tab，换行仅解析为换行，文字碰到边界时发生换行</div>
+
+    <p class="p5">white-space:nowrap; 左边1个空格  左边2个空格   左边3个空格
+        左边一个换行
+            左边一个换行加一个Tab
+    </p>
+    <div style="color:red;">white-space:nowrap;合并文字间的空白距离，tab和换行解析为空格，文字超出边界不换行</div>
+
+    <p class="p6">
+        .m-demo .p6{
+            white-space:pre-wrap;
+        }
+    </p>
+</div>
+</body>
+</html>
