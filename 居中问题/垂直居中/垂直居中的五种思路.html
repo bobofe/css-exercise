@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>垂直居中</title>
+    <style>
+        .parent{
+            height: 200px;
+            font-size: 0;
+        }
+        .child{
+            display: inline-block;
+            font-size: 20px;
+            vertical-align: middle;
+        }
+        .childSbling{
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+            width: 5px;
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+<div class="parent" style="background-color: lightgray; width:200px;">
+    <div class="child" style="background-color: lightblue;">我是比较长的比较长的多行文哈哈哈哈哈哈哈哈哈哈字</div>
+    <i class="childSbling">买买买</i>
+</div>
+</body>
+</html>

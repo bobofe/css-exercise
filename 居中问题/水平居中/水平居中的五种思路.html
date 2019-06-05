@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>水平居中</title>
+    <style>
+        .p{
+            background: coral;
+            text-align: center;
+        }
+        .c{
+            display: inline-block;
+            width: 200px;
+            background: #ffaf7b;
+        }
+        .cc{
+            text-align: left;
+        }
+        .parent{
+            position: relative;
+        }
+        .childWrap{
+            position: absolute;
+            left: 50%;
+        }
+        .child{
+            width:50px;
+            margin:0 50%;
+        }
+    </style>
+</head>
+<body>
+<div class="p">
+    <div class="c">门电机
+        <div class="cc">的地方</div>
+    </div>
+</div>
+<div class="parent" style="background-color: gray;height: 20px;">
+    <div class="childWrap">
+        <div class="child" style="background-color: lightblue;">DEMO</div>
+    </div>
+</div>
+</body>
+</html>
