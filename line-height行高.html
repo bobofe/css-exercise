@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>行高</title>
+    <style>
+
+        .container1{
+            background: red;
+            color: #fff;
+            height: 100px;
+            line-height:100px ;
+            /*padding: 20px;*/font-size: 50px;
+        }
+        .container1 span{
+            display: inline-block;
+        }
+        /*.s1{*/
+        /*    font-size: 20px;*/
+        /*    background: black;*/
+        /*    vertical-align: text-top;*/
+        /*}*/
+        /*.s11{*/
+        /*    font-size: 20px;*/
+        /*    background: black;*/
+        /*    vertical-align: middle;*/
+        /*}*/
+        /*.s12{*/
+        /*    font-size: 20px;*/
+        /*    background: black;*/
+        /*}*/
+        /*.s13{*/
+        /*    font-size: 20px;*/
+        /*    background: black;*/
+        /*}*/
+        .s14{
+            /*font-size: 50px;*/
+            background: black;
+        }
+        /*.s2{*/
+        /*    font-size: 30px;*/
+        /*    background: black;*/
+        /*}*/
+        /*.s3{*/
+        /*    font-size: 40px;*/
+        /*    background: black;*/
+        /*}*/
+    </style>
+</head>
+<body>
+<p>处在同一行的文本默认基线对齐，每一个行内元素都有一个独立的行框，不给父元素设置最小行高的情况下，一整行的行高为本行最大行内元素的行框的行高</p>
+<p>如果给某一行内元素设置vertical-align，将该行内元素的行框作为整体相对于整行的line-height值（top/bottom/middle/baseline）进行定位</p>
+<p>如果给整行设置height，向下增加高度</p>
+<p>如果给整行加line-height,相当于给原来的行框增加了额外的上下间距，且上间距 = 下间距</p>
+<p>行内元素的边框边界由font-size决定(默认行内框高度)，不受line-height控制(设置高度)</p>
+   单行文本，字号大小不一，给父块级元素设置line-height，因为文字基线对齐，增加的半行距=（行高 - fontsize行距）/ 2，小字号<br>
+   增加的半行距 > 大字号增加的半行距，小字号的实际占位会超出父元素，并撑开父元素，使得父元素的实际高度 > 行高
+</p>
+<p>单行文本，字体大小相同，font-size设置在父元素上，不要设置在行内元素上，否则，相当于有默认font-size，由于空格影响，还会出现上面的问题
+</p>
+<p>引起上面问题的本质原因是内联元素全部都继承了父元素的行高，基线对齐导致小字号的实际占位偏下超出父元素，如果要给行内元素单独设置字号，
+    想要避免上面的问题，可以给小字号的行内元素显示的设置一个小的line-height
+</p>
+<p>行内元素的显示尺寸（视觉尺寸）是由font-size决定的，通过显示line-height后补的半间距无法看见，为方便查看实际占位尺寸，可将行内元素的
+    display设置为inline-block
+</p>
+<div class="container1">
+    <span class="s14">Pxg中</span>
+</div>
+</body>
+</html>

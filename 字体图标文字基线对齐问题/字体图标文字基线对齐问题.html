@@ -3,33 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>字体图标文字基线对齐问题</title>
-    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
     <style>
-        div{
-            height: 80px;
-            background: yellow;
-            display: inline-block;
-            padding: 10px;
-            line-height: 80px;
+        *{
+            padding: 0;
+            margin: 0;
         }
-        div span,div i{
-            vertical-align:middle;
+        div{
+            font-size: 50px;
+            background: yellow;
+            line-height: 150px;
         }
         div span {
-            font-size: 20px;
-            display: inline-block;
+            /*display: inline-block;*/
             background: red;
         }
-        div i{
-            font-size: 30px;
+        div em{
+            vertical-align: top;
+            background: bisque;
             display: inline-block;
-            background: burlywood;
+            line-height: 80px;
+            font-size: 20px;
         }
     </style>
 </head>
 <body>
 <div>
-    <span>我我我</span><i>我我我我</i>
+    <span>xxxpppp</span><i class="icon-refresh "></i><em>wok</em>
 </div>
 </body>
 </html>
