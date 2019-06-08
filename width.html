@@ -76,7 +76,7 @@
         .child3{
             width: 150px;
             height: 150px;
-            background: #000;
+            background: yellow;
             margin-top: -150px;
         }
         .child4{
@@ -86,7 +86,13 @@
             float: left;
             /*margin-left: -150px;*/
         }
-
+        h2{
+            margin: 0;
+            padding: 0;
+        }
+        .rt{
+            background: red;
+        }
     </style>
 </head>
 <body>
@@ -129,7 +135,7 @@
 
     </div>
 </div>
-<p>在下面这个例子中，元素1通过margin-top定位到父元素外，占据尺寸为0，不会影响后面的元素</p>
+<p class="rt">在下面这个例子中，元素1通过margin-top定位到父元素外，占据尺寸为0，不会影响后面的元素</p>
 <div class="parent">
     <div class="child3">
 
@@ -138,6 +144,8 @@
 
     </div>
 </div>
-<h1>通过margin负值改变元素的占据尺寸，当元素的占据尺寸为0时，它对水平方向的影响仍然存在（这个元素仍占据着这一行），对垂直方向无任何影响</h1>
+<h1>通过margin负值改变元素的占据尺寸，当元素的占据尺寸为0时，它对水平方向的影响仍然存在（这个元素仍占据着这一行），对垂直方向无任何影响。
+    并且，通过margin负值不占位的元素不会遮挡任何文本内容，但会遮挡文本内容的背景。
+</h1>
 </body>
 </html>
