@@ -58,12 +58,13 @@
             background: red;
             margin-left: 500px;
             border: 1px solid #ffaf7b;
+            margin-bottom: 500px;
         }
         .child1{
             width: 150px;
             height: 150px;
             background: #000;
-            margin-left: -150px;
+            margin-left: -200px;
         }
         .child2{
             width: 150px;
@@ -72,6 +73,20 @@
             float: left;
             /*margin-left: -150px;*/
         }
+        .child3{
+            width: 150px;
+            height: 150px;
+            background: #000;
+            margin-top: -150px;
+        }
+        .child4{
+            width: 150px;
+            height: 150px;
+            background: purple;
+            float: left;
+            /*margin-left: -150px;*/
+        }
+
     </style>
 </head>
 <body>
@@ -104,7 +119,7 @@
     我设置宽度100%，设置了父margin
 </div>
 <p>
-    这下面这个例子中,虽然子元素1通过margin定到了父元素外头，占据尺寸为0，但是它对本行的影响并不会消失
+    这下面这个例子中,虽然子元素1通过margin-left定到了父元素外头，占据尺寸为0，但是它对本行的影响并不会消失
 </p>
 <div class="parent">
     <div class="child1">
@@ -114,5 +129,15 @@
 
     </div>
 </div>
+<p>在下面这个例子中，元素1通过margin-top定位到父元素外，占据尺寸为0，不会影响后面的元素</p>
+<div class="parent">
+    <div class="child3">
+
+    </div>
+    <div class="child4">
+
+    </div>
+</div>
+<h1>通过margin负值改变元素的占据尺寸，当元素的占据尺寸为0时，它对水平方向的影响仍然存在（这个元素仍占据着这一行），对垂直方向无任何影响</h1>
 </body>
 </html>
