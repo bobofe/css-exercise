@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .test{
+            background: red;
+        }
+        .t1{
+              border: 10px solid black;
+          }
+        .t2{
+            border: 20px solid black;
+        }
+        .t3{
+            border: 30px solid black;
+        }
+    </style>
+<body>
+<p>行内元素（行内块）的边框并不会影响整行的基线对齐，可理解为边框只显示不占位</p>
+<p>绝对行内元素占位的字体大小</p>
+<p>inline元素的层级要高于普通元素</p>
+<div class="test">
+    <span class="t1">我有1px边框</span><span class="t2">我有2px边框</span><span class="t3">我有3px边框</span>
+</div>
+</body>
+</html>
