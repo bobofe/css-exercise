@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>头尾固定，中间滚动-flex</title>
+    <style>
+        *{
+            padding: 0;
+            margin:0;
+        }
+        html, body {
+            font-family: sans-serif;
+            height: 100%;
+            width: 100%;
+        }
+
+        .container {
+            display: flex;
+            /*关键， flex布局*/
+           flex-direction: column;
+            /*关键，三块主题column摆放。*/
+           height: 100%;
+           /*关键，设置高度为可见高度的100 % ；*/
+        }
+
+        .header {
+            width: 100%;
+            background: springgreen;
+        }
+
+        .body {
+            flex: 1;
+            /*关键， 填充剩余空间*/
+            width: 100%;
+            background: lightyellow;
+            overflow-y: scroll;
+            /*关键，超出部分滚动*/
+        }
+        .c{
+            height: 1000px;
+        }
+        .footer {
+            width: 100%;
+            background: goldenrod;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        我是头部
+    </div>
+    <div class="body">
+        我是中间内容层
+        <div class="c">
+
+        </div>
+    </div>
+    <div class="footer">
+        我是尾部
+    </div>
+</div>
+
+</body>
+</html>
