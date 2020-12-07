@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container{
+      display: flex;
+      width: 300px;
+      background: #ace;
+      justify-content: space-between;
+    }
+    .nm {
+      background: #fac;
+    }
+  </style>
+</head>
+<body>
+  <p>flex布局，子元素都变为行内块级元素，宽高自适应，可设置width和height属性</p>
+  <p>父元素设置flex布局，同时设置space-between，宽高为0的元素或空元素也计算在内</p>
+  <div class="container">
+    <div></div>
+    <div class="nm">1</div>
+    <div class="nm">2</div>
+    <div class="nm">3</div>
+    <div class="nm">4</div>
+    <div class="nm">5</div>
+  </div>
+  <div class="container">
+    <div class="nm">1</div>
+    <div class="nm">2</div>
+    <div class="nm">3</div>
+    <div class="nm">4</div>
+    <div class="nm">5</div>
+  </div>
+</body>
+</html>
