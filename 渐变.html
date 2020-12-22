@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .wrap {
+      padding-bottom: 10px;
+      border: 1px solid #66f;
+    }
+    .radial-gradient1 {
+      width: 400px; height: 200px;
+      background: radial-gradient(yellow, red);
+    }
+    b{
+      color: #f66;
+    }
+    .radial-gradient2 {
+      width: 400px;
+      height: 200px;
+      background: radial-gradient(#e66465 50%, #9198e5 50%);
+    }
+    .radial-gradient3 {
+      width: 400px;
+      height: 200px;
+      background: radial-gradient(#a6643e 50%, #5198e5 0);
+    }
+    .radial-gradient4 {
+      width: 400px;
+      height: 200px;
+      background: radial-gradient(circle,#a6643e 50%, #5198e5 0);
+    }
+    .radial-gradient5 {
+      width: 400px;
+      height: 200px;
+      background: radial-gradient(circle,#a6643e 50%, #5198e5 0);
+    }
+    .radial-gradient6 {
+      width: 400px;
+      height: 200px;
+      background: radial-gradient(circle at top left,#a6643e 50%, #5198e5 0);
+    }
+    .radial-gradient7 {
+      width: 400px;
+      height: 200px;
+      background: radial-gradient(closest-side circle,#a6643e 50%, #5198e5 0);
+    }
+    .radial-gradient8 {
+      width: 400px;
+      height: 200px;
+      background: radial-gradient(closest-corner circle,#a6643e 50%, #5198e5 0);
+    }
+    .radial-gradient9 {
+      width: 400px;
+      height: 200px;
+      background: radial-gradient(farthest-side circle,#a6643e 50%, #5198e5 0);
+    }
+    .radial-gradient10 {
+      width: 400px;
+      height: 200px;
+      background: radial-gradient(farthest-corner circle,#a6643e 50%, #5198e5 0);
+    }
+    .radial-gradient11 {
+      width: 400px;
+      height: 200px;
+      background: radial-gradient(80px circle,#a6643e 50%, #5198e5 0);
+    }
+    .radial-gradient12 {
+      width: 400px;
+      height: 200px;
+      background: radial-gradient(160px 80px ellipse,#a6643e 80px, #5198e5);
+    }
+    .radial-gradient13 {
+      width: 400px;
+      height: 200px;
+      background: radial-gradient(160px 80px ellipse,#a6643e 160px, #5198e5);
+    }
+    .radial-gradient14 {
+      width: 400px;
+      height: 200px;
+      background: radial-gradient(160px 80px ellipse,#a6643e 40px, #5198e5 40px, #cedafa 80px,#a6643e 160px);
+    }
+  </style>
+</head>
+<body>
+  <h1>基础应用:仅指定两种颜色</h1>
+  <div class="wrap">
+    <p>默认情况下，以元素的中心点为圆心进行径向<b>模糊渐变</b>;</p>
+    <p><b>其渐变距离和位置是由容器的尺寸决定的，并且渐变颜色自动终止于容器的边缘。</b>如果容器的宽高比是2:1，最终渐变呈现出来的形状也是一个2:1的椭圆形。</p>
+    <div class="radial-gradient1">
+    </div>
+  </div>
+  <h1>基础应用:仅指定两种颜色，但不希望渐变</h1>
+  <div class="wrap">
+    <p>在指定颜色的时，可以同时指定颜色的百分比或者长度。</p>
+    <p>对于起始颜色：从圆心到指定值表示起始颜色的长度。</p>
+    <p>对于终止颜色：从指定值到容器边缘表示终止颜色的长度。</p>
+    <p>在指定两种颜色的情况下，如果起始色的终止位置小于终止色的起始位置，中间部分就是模糊渐变的位置。</p>
+    <p>由上面可知，如果不想渐变，只要终止色的起始位置小于等于起始色的终止位置即可。在实践中，通常指定终止色的起始位置为0。</p>
+    <div class="radial-gradient2"></div>
+    <div class="radial-gradient3"></div>
+  </div>
+  <h1>指定形状的渐变</h1>
+  <div class="wrap">
+    <p>径向渐变默认受容器的影响。容器为正方形为圆形渐变；容器为长方形为椭圆渐变。</p>
+    <p>如果不希望受容器影响，可指定一个渐变的形状：circle、ellipse</p>
+    <p>对于圆形渐变，其渐变范围（渐变结束线）不是按照宽度或高度，而是以最远边角距作为渐变结束线</p>
+    <div class="radial-gradient4"></div>
+  </div>
+  <h1>指定渐变起始点（圆心）</h1>
+  <div class="wrap">
+    <p>渐变的圆心默认在容器的中心。</p>
+    <p>对于圆形渐变，其渐变范围（渐变结束线）不是按照宽度或高度，而是以最远边角距作为渐变结束线</p>
+    <p>圆心改变之后，由于最远边角距变了，内圆的半径也会改变</p>
+    <p>指定圆心，是以形状 at 位置的形式，位置可以是关键字top/center/bottom/left/center/right，也可以是数值，或者百分比</p>
+    <div class="radial-gradient5"></div>
+    <div class="radial-gradient6"></div>
+  </div>
+  <h1>指定渐变终止点（渐变结束位置）</h1>
+  <div class="wrap">
+    <p>对于椭圆渐变，其渐变距离和位置是由容器的尺寸决定的。</p>
+    <p>对于圆形渐变，其渐变范围（渐变结束线）不是按照宽度或高度，而是以最远边角距作为渐变结束线</p>
+    <p>如果想指定渐变的终止点，可使用关键字：closest-side、closest-corner、farthest-side、farthest-corner，指定的方法是在形状前</p>
+    <div class="radial-gradient7"></div>
+    <div class="radial-gradient8"></div>
+    <div class="radial-gradient9"></div>
+    <div class="radial-gradient10"></div>
+  </div>
+  <h1>指定渐变半径（长短轴）</h1>
+  <div class="wrap">
+    <p>对于椭圆渐变，其渐变距离和位置是由容器的尺寸决定的。</p>
+    <p>对于圆形渐变，其渐变范围（渐变结束线）不是按照宽度或高度，而是以最远边角距作为渐变结束线</p>
+    <p>改变圆心的位置会导致圆或椭圆的半径变化</p>
+    <p>可以通过执行长度来执行圆形的半径或长短轴的半径，该属性指定的是相对于容器的基准圈的长度。</p>
+    <div class="radial-gradient11"></div>
+    <div class="radial-gradient12"></div>
+    <div class="radial-gradient13"></div>
+    <div class="radial-gradient14"></div>
+  </div>
+</body>
+</html>
